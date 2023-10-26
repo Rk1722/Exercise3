@@ -95,8 +95,8 @@ class Polynomial:
             return final_poly
 
     def __call__(self, other):
-        final_poly = 0
+        final_poly1 = 0
         if isinstance(Polynomial, Number):
             for i, coefs in enumerate(self.coefficients):
-                final_poly += coefs * (other ** (self.degree() - i))
-        return final_poly
+                final_poly1 += coefs * (other ** (self.degree() - i))
+        return final_poly1
