@@ -54,15 +54,11 @@ class Polynomial:
     def __sub__(self, other):
         if isinstance(other, Polynomial):
             if self.degree() > other.degree():
-                other.coefficients = tuple(other.
-                                           coefficients) + [0] * (self.degree()
-                                                                  - other.
-                                                                  degree())
+                for i in range(self.degree() - other.degree()):
+                    self.coefs.append(0)
             else:
-                self.coefficients = tuple(self.
-                                          coefficients) + [0] * (other.
-                                                                 degree() -
-                                                                 self.degree())
+                for i in range(other.degree() - self.degree()):
+                    other.coefs.append(0)
             coefs = tuple(a - b for a, b in zip(self.coefficients,
                                                 other.coefficients))
             while coefs[-1] == 0:
