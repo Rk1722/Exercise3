@@ -53,7 +53,9 @@ class Polynomial:
 
     def __sub__(self, other):
         if isinstance(other, Polynomial):
-            if self.degree() > other.degree():
+            if self.degree == other.degree():
+                pass
+            elif self.degree() > other.degree():
                 for i in range(self.degree() - other.degree()):
                     tuple(list(self.coefficients).append(0))
             else:
