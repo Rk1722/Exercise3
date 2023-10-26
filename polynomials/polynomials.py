@@ -56,7 +56,7 @@ class Polynomial:
             newcoefficients.append(other.coefficients[i] * (-1))
         newPoly = Polynomial(newcoefficients)
         Result = self + newPoly
-        print(Result.__init__())
+        print(Result.__str__())
         return (Result)
 
     def __rsub__(self, other):
