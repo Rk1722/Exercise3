@@ -53,6 +53,7 @@ class Polynomial:
 
     def __sub__(self, other):
         for i in range(other.degree()):
+            print('hello')
             other.coefficients[i] == other.coefficients[i] * (-1)
         print(other.__str__())
         return (self + other)
