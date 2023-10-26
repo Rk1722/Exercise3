@@ -57,7 +57,8 @@ class Polynomial:
             coefs = tuple(a - b for a, b in zip(self.coefficients,
                                                 other.coefficients))
             coefs += self.coefficients[common:] + other.coefficients[common:]
-
+            while coefs[-1] ==0:
+                coefs.pop()
             return Polynomial(coefs)
         else:
             return NotImplemented
