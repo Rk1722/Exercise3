@@ -52,27 +52,13 @@ class Polynomial:
         return self + other
 
     def __sub___(self, other):
-        if isinstance(Polynomial, Polynomial):
-            if self.degree() > other.degree():
-                other_coefficients = other.coefficients + [0] * (self.degree()
-                                                                 - other.degree
-                                                                 ())
-                self_coefficients = other_coefficients
-            else:
-                self_coefficients = self.coefficients + [0] * (other.degree()
-                                                               - self.degree())
-                other_coefficients = self_coefficients
-            result_coefficients = tuple(self_coefficients - other_coefficients
-                                        for self_coefficients,
-                                        other_coefficients in
-                                        zip(self.coefficients,
-                                            other.coefficients))
+        if isinstance(other, Polynomial):
+            common = min(self.degree(), other.degree()) + 1
+            coefs = tuple(a - b for a, b in zip(self.coefficients,
+                                                other.coefficients))
+            coefs += self.coefficients[common:] + other.coefficients[common:]
 
-            # Remove trailing zeros in the result
-            while result_coefficients[-1] == 0:
-                result_coefficients.pop()
-
-            return Polynomial(result_coefficients)
+            return Polynomial(coefs)
         else:
             return NotImplemented
 
