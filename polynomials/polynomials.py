@@ -62,9 +62,11 @@ class Polynomial:
                 self_coefficients = self.coefficients + [0] * (other.degree()
                                                                - self.degree())
                 other_coefficients = self_coefficients
-            result_coefficients = [self_coefficients - other_coefficients for
-                                   self_coefficients, other_coefficients in
-                                   zip(self.coefficients, other.coefficients)]
+            result_coefficients = tuple(self_coefficients - other_coefficients
+                                        for self_coefficients,
+                                        other_coefficients in
+                                        zip(self.coefficients,
+                                            other.coefficients))
 
             # Remove trailing zeros in the result
             while result_coefficients[-1] == 0:
