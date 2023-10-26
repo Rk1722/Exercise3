@@ -60,10 +60,8 @@ class Polynomial:
             else:
                 self.coefficients = self.coefficients + [0] * (other.degree() -
                                                                self.degree())
-            common = min(self.degree(), other.degree()) + 1
             coefs = tuple(a - b for a, b in zip(self.coefficients,
                                                 other.coefficients))
-            coefs += self.coefficients[common:] + other.coefficients[common:]
             while coefs[-1] == 0:
                 coefs.pop()
             return Polynomial(coefs)
