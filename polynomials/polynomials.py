@@ -67,7 +67,7 @@ class Polynomial:
                                    zip(self.coefficients, other.coefficients)]
 
             # Remove trailing zeros in the result
-            while result_coefficients and result_coefficients[-1] == 0:
+            while result_coefficients[-1] == 0:
                 result_coefficients.pop()
 
             return Polynomial(result_coefficients)
