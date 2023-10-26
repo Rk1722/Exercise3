@@ -55,16 +55,17 @@ class Polynomial:
         if isinstance(other, Polynomial):
             print(type(self.degree()))
             print(type(other.degree()))
-            x = int(self.degree)
-            y = int(other.degree)
+            x = int(self.degree())
+            y = int(other.degree())
+            z = int(self.degree() - other.degree())
             print(x)
             if x == y:
                 pass
             elif x > y:
-                for i in range(x-y):
+                for i in range(z):
                     tuple(list(self.coefficients).append(0))
             elif y > x:
-                for i in range(y-x):
+                for i in range(-z):
                     tuple(list(other.coefficients).append(0))
             coefs = tuple(a - b for a, b in zip(self.coefficients,
                                                 other.coefficients))
