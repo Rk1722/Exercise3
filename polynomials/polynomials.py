@@ -58,10 +58,10 @@ class Polynomial:
             if self.degree() == other.degree():
                 pass
             elif self.degree() > other.degree():
-                for i in range((self.degree() - other.degree())):
+                for i in range(int(self.degree() - other.degree())):
                     tuple(list(self.coefficients).append(0))
             elif other.degree() > self.degree():
-                for i in range(other.degree() - self.degree()):
+                for i in range(int(other.degree() - self.degree())):
                     tuple(list(other.coefficients).append(0))
             coefs = tuple(a - b for a, b in zip(self.coefficients,
                                                 other.coefficients))
