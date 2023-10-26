@@ -56,14 +56,15 @@ class Polynomial:
             print(type(self.degree()))
             print(type(other.degree()))
             x = int(self.degree())
+            y = int(other.degree())
             print(x)
-            if self.degree() == other.degree():
+            if x == y:
                 pass
-            elif self.degree() > other.degree():
-                for i in range(int(self.degree() - other.degree())):
+            elif x > y():
+                for i in range(x-y):
                     tuple(list(self.coefficients).append(0))
-            elif other.degree() > self.degree():
-                for i in range(int(other.degree() - self.degree())):
+            elif y > x:
+                for i in range(y-x):
                     tuple(list(other.coefficients).append(0))
             coefs = tuple(a - b for a, b in zip(self.coefficients,
                                                 other.coefficients))
