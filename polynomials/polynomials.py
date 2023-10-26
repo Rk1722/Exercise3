@@ -7,7 +7,7 @@ class Polynomial:
         self.coefficients = coefs
 
     def degree(self):
-        return int(len(self.coefficients) - 1)
+        return (len(self.coefficients) - 1)
 
     def __str__(self):
         coefs = self.coefficients
@@ -52,28 +52,9 @@ class Polynomial:
         return self + other
 
     def __sub__(self, other):
-        if isinstance(other, Polynomial):
-            print(type(self.degree()))
-            print(type(other.degree()))
-            x = int(self.degree())
-            y = int(other.degree())
-            type(x)
-            print(x)
-            if x == y:
-                pass
-            elif x > y:
-                for i in range():
-                    tuple(list(self.coefficients).append(0))
-            elif y > x:
-                for i in range():
-                    tuple(list(other.coefficients).append(0))
-            coefs = tuple(a - b for a, b in zip(self.coefficients,
-                                                other.coefficients))
-            while coefs[-1] == 0:
-                coefs.pop()
-            return Polynomial(coefs)
-        else:
-            return NotImplemented
+        coefs = tuple(a - b for a, b in
+                      zip(self.coefficients, other.coefficients))
+        return Polynomial(coefs)
 
     def __rsub__(self, other):
         return (self - other)
