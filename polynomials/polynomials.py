@@ -51,15 +51,13 @@ class Polynomial:
         return self + other
 
     def __sub__(self, other):
-        if isinstance(Polynomial,Polynomial):
-            newcoefficients = []
-            for i in range(other.degree()+1):
-                newcoefficients.append(other.coefficients[i] * (-1))
-            newPoly = Polynomial(newcoefficients)
-            print(newPoly.__str__())
-            Result = self + newPoly
-            print(Result.__str__())
-            return (Result)
+        newcoefficients = []
+        for i in range(other.degree()):
+            newcoefficients.append(other.coefficients[i] * (-1))
+        newPoly = Polynomial(newcoefficients)
+        Result = self + newPoly
+        print(Result.__str__())
+        return (Result)
 
     def __rsub__(self, other):
         return (self - other)
