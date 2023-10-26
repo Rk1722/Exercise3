@@ -36,7 +36,9 @@ class Polynomial:
             common = min(self.degree(), other.degree()) + 1
             coefs = tuple(a + b for a, b in zip(self.coefficients,
                                                 other.coefficients))
-            coefs += tuple(self.coefficients[common:]) + tuple(other.coefficients[common:])
+            coefs += tuple(self.coefficients[common:]) + tuple(other
+                                                               .coefficients
+                                                               [common:])
 
             return Polynomial(coefs)
 
@@ -51,13 +53,15 @@ class Polynomial:
         return self + other
 
     def __sub__(self, other):
-        newcoefficients = []
-        for i in range(other.degree()):
-            newcoefficients.append(other.coefficients[i] * (-1))
-        newPoly = Polynomial(newcoefficients)
-        Result = self + newPoly
-        print(Result.__str__())
-        return (Result)
+        if isinstance(Polynomial, Polynomial):
+            newcoefficients = []
+            for i in range(other.degree()+1):
+                newcoefficients.append(other.coefficients[i] * (-1))
+            newPoly = Polynomial(newcoefficients)
+            print(newPoly.__str__())
+            Result = self + newPoly
+            print(Result.__str__())
+            return (Result)
 
     def __rsub__(self, other):
         return (self - other)
