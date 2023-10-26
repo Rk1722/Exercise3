@@ -32,12 +32,11 @@ class Polynomial:
              self.coefficients == other.coefficients
 
     def __add__(self, other):
-
         if isinstance(other, Polynomial):
             common = min(self.degree(), other.degree()) + 1
             coefs = tuple(a + b for a, b in zip(self.coefficients,
                                                 other.coefficients))
-            coefs += tuple(self.coefficients[common:])+ tuple(other.coefficients[common:])
+            coefs += tuple(self.coefficients[common:]) + tuple(other.coefficients[common:])
 
             return Polynomial(coefs)
 
@@ -57,8 +56,8 @@ class Polynomial:
             print('hello')
             newcoefficients.append(other.coefficients[i] * (-1))
         newPoly = Polynomial(newcoefficients)
-
-        return (self + newPoly)
+        Result = self + newPoly
+        return (Result)
 
     def __rsub__(self, other):
         return (self - other)
