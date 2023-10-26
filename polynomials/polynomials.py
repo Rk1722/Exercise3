@@ -52,7 +52,7 @@ class Polynomial:
 
     def __sub__(self, other):
         newcoefficients = []
-        for i in range(other.degree()):
+        for i in range(other.degree()+1):
             newcoefficients.append(other.coefficients[i] * (-1))
         newPoly = Polynomial(newcoefficients)
         print(newPoly.__str__())
