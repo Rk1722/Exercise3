@@ -7,7 +7,7 @@ class Polynomial:
         self.coefficients = coefs
 
     def degree(self):
-        return len(self.coefficients) - 1
+        return int(len(self.coefficients) - 1)
 
     def __str__(self):
         coefs = self.coefficients
