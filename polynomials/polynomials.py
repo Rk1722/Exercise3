@@ -61,6 +61,7 @@ class Polynomial:
             return Polynomial(coefs)
         else:
             return NotImplemented
+            print('x')
 
     def __rsub__(self, other):
         return (self - other)
