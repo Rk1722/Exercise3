@@ -56,8 +56,9 @@ class Polynomial:
         for i in range(other.degree()):
             print('hello')
             newcoefficients.append(other.coefficients[i] * (-1))
+        newPoly = Polynomial(newcoefficients)
 
-        return (self + newcoefficients)
+        return (self + newPoly)
 
     def __rsub__(self, other):
         return (self - other)
