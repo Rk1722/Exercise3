@@ -52,11 +52,9 @@ class Polynomial:
         return self + other
 
     def __sub__(self, other):
-        common = min(self.degree(), other.degree()) + 1
-        coefs = tuple(a - b for a, b in
-                      zip(self.coefficients, other.coefficients))
-        coefs += self.coefficients[common:] + other.coefficients[common:]
-        return Polynomial(coefs)
+        for i in range(other.degree()):
+            other.coefficients[i] == other.coefficients[i] * (-1)
+        return (self + other)
 
     def __rsub__(self, other):
         return (self - other)
