@@ -53,10 +53,10 @@ class Polynomial:
     def __sub__(self, other):
         newcoefficients = []
         for i in range(other.degree()):
-            print('hello')
             newcoefficients.append(other.coefficients[i] * (-1))
         newPoly = Polynomial(newcoefficients)
         Result = self + newPoly
+        print(Result.__init__())
         return (Result)
 
     def __rsub__(self, other):
