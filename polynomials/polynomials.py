@@ -55,10 +55,10 @@ class Polynomial:
         if isinstance(other, Polynomial):
             if self.degree() > other.degree():
                 for i in range(self.degree() - other.degree()):
-                    self.coefficients.append(0)
+                    tuple(list(self.coefficients).append(0))
             else:
                 for i in range(other.degree() - self.degree()):
-                    other.coefficients.append(0)
+                    tuple(list(other.coefficients).append(0))
             coefs = tuple(a - b for a, b in zip(self.coefficients,
                                                 other.coefficients))
             while coefs[-1] == 0:
