@@ -60,7 +60,7 @@ class Polynomial:
             print(x)
             if x == y:
                 pass
-            elif x > y():
+            elif x > y:
                 for i in range(x-y):
                     tuple(list(self.coefficients).append(0))
             elif y > x:
