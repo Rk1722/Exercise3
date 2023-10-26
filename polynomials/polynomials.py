@@ -59,7 +59,7 @@ class Polynomial:
             print(newPoly.__str__())
             Result = self + newPoly
             print(Result.__str__())
-        return (Result)
+            return (Result)
 
     def __rsub__(self, other):
         return (self - other)
