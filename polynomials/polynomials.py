@@ -53,14 +53,24 @@ class Polynomial:
 
     def __sub___(self, other):
         if isinstance(Polynomial, Polynomial):
-            common = min(self.degree(), other.degree()) + 1
-            coefs = tuple(a - b for a, b in zip(self.coefficients,
-                                                other.coefficients))
-            coefs += self.coefficients[common:] - other.coefficients[common:]
-            return Polynomial(coefs)
-        elif isinstance(other, Number):
-            return Polynomial((self.coefficients[0] - other, +
-                               self.coefficients[1:]))
+            if self.degree() > other.degree():
+                other_coefficients = other.coefficients + [0] * (self.degree()
+                                                                 - other.degree
+                                                                 ())
+                self_coefficients = other_coefficients
+            else:
+                self_coefficients = self.coefficients + [0] * (other.degree()
+                                                               - self.degree())
+                other_coefficients = self_coefficients
+            result_coefficients = [self_coefficients - other_coefficients for
+                                   self_coefficients, other_coefficients in
+                                   zip(self.coefficients, other_coefficients)]
+
+            # Remove trailing zeros in the result
+            while result_coefficients and result_coefficients[-1] == 0:
+                result_coefficients.pop()
+
+            return Polynomial(result_coefficients)
         else:
             return NotImplemented
 
