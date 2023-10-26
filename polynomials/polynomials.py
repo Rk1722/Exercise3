@@ -64,7 +64,7 @@ class Polynomial:
                 other_coefficients = self_coefficients
             result_coefficients = [self_coefficients - other_coefficients for
                                    self_coefficients, other_coefficients in
-                                   zip(self.coefficients, other_coefficients)]
+                                   zip(self.coefficients, other.coefficients)]
 
             # Remove trailing zeros in the result
             while result_coefficients and result_coefficients[-1] == 0:
