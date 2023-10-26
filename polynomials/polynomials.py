@@ -56,10 +56,10 @@ class Polynomial:
             if self.degree() == other.degree():
                 pass
             elif self.degree() > other.degree():
-                for i in range((self.degree() - other.degree())+1):
+                for i in range((self.degree() - other.degree())):
                     tuple(list(self.coefficients).append(0))
             else:
-                for i in range(other.degree() - self.degree()+1):
+                for i in range(other.degree() - self.degree()):
                     tuple(list(other.coefficients).append(0))
             coefs = tuple(a - b for a, b in zip(self.coefficients,
                                                 other.coefficients))
@@ -68,7 +68,6 @@ class Polynomial:
             return Polynomial(coefs)
         else:
             return NotImplemented
-            print('x')
 
     def __rsub__(self, other):
         return (self - other)
