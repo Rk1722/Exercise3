@@ -51,7 +51,7 @@ class Polynomial:
     def __radd__(self, other):
         return self + other
 
-    def __sub___(self, other):
+    def __sub__(self, other):
         if isinstance(other, Polynomial):
             common = min(self.degree(), other.degree()) + 1
             coefs = tuple(a - b for a, b in zip(self.coefficients,
