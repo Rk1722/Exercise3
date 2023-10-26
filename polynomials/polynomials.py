@@ -55,6 +55,8 @@ class Polynomial:
         if isinstance(other, Polynomial):
             print(type(self.degree()))
             print(type(other.degree()))
+            x = int(self.degree())
+            print(x)
             if self.degree() == other.degree():
                 pass
             elif self.degree() > other.degree():
