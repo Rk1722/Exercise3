@@ -59,7 +59,7 @@ class Polynomial:
             elif self.degree() > other.degree():
                 for i in range((self.degree() - other.degree())):
                     tuple(list(self.coefficients).append(0))
-            else:
+            elif other.degree() > self.degree():
                 for i in range(other.degree() - self.degree()):
                     tuple(list(other.coefficients).append(0))
             coefs = tuple(a - b for a, b in zip(self.coefficients,
