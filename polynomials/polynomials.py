@@ -53,6 +53,7 @@ class Polynomial:
 
     def __sub__(self, other):
         if isinstance(other, Polynomial):
+            print(self.degree())
             if self.degree() == other.degree():
                 pass
             elif self.degree() > other.degree():
