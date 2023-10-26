@@ -54,6 +54,7 @@ class Polynomial:
     def __sub__(self, other):
         for i in range(other.degree()):
             other.coefficients[i] == other.coefficients[i] * (-1)
+        print(other.__str__())
         return (self + other)
 
     def __rsub__(self, other):
@@ -91,4 +92,5 @@ class Polynomial:
         if isinstance(Polynomial, Number):
             for i, coefs in enumerate(self.coefficients):
                 final_poly1 += coefs * (other ** (self.degree() - i))
+            
         return final_poly1
